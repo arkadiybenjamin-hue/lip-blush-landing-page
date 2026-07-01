@@ -3,17 +3,15 @@ import { site } from '@/lib/site'
 import { InstagramIcon, WhatsAppIcon } from './icons'
 
 const quickLinks = [
-  { label: 'Services', href: '#services' },
+  { label: 'What Is Lip Blush', href: '#services' },
   { label: 'Gallery', href: '#gallery' },
+  { label: 'Process', href: '#process' },
   { label: 'Contact', href: '#contact' },
 ]
 
 export function Footer() {
   return (
-    <footer
-      id="contact"
-      className="bg-footer text-footer-foreground"
-    >
+    <footer className="bg-footer text-footer-foreground">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -22,9 +20,8 @@ export function Footer() {
               {site.name}
             </p>
             <p className="mt-4 text-sm leading-relaxed text-footer-foreground/70">
-              Soft, natural, custom-matched lip blush by a licensed &amp;
-              certified artist. Results designed to heal beautifully and feel
-              unmistakably like you.
+              Soft, natural, custom-matched lip blush. Results designed to heal
+              beautifully and feel unmistakably like you.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a
@@ -75,7 +72,7 @@ export function Footer() {
             <ul className="mt-5 space-y-4 text-sm text-footer-foreground/80">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
-                <span>{site.city}, United Kingdom</span>
+                <span>{site.city}</span>
               </li>
               <li>
                 <a
@@ -108,7 +105,7 @@ export function Footer() {
           <p>
             &copy; 2026 {site.name}. All rights reserved.
           </p>
-          <p>Prototype design — content and imagery are placeholders.</p>
+          <p>Demo template — replace placeholders with your information.</p>
         </div>
       </div>
     </footer>

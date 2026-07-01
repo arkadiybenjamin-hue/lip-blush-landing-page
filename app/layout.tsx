@@ -18,10 +18,9 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: 'Maison Lèvres — Custom Lip Blush PMU Studio',
+  title: '[Studio Name] — Lip Blush PMU Studio',
   description:
-    'Soft, natural lip blush permanent makeup, custom-matched to your skin tone and lip shape. Book a free consultation with our licensed & certified artist.',
-  generator: 'v0.app',
+    'Soft, natural lip blush permanent makeup, custom-matched to your skin tone. Send a photo for a free consultation.',
   icons: {
     icon: [
       {

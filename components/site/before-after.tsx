@@ -5,9 +5,9 @@ import { SectionHeading } from './section-heading'
 
 const galleryPlaceholders = [
   { label: 'Before', subtitle: 'Natural lips' },
-  { label: 'Healed Result', subtitle: 'Soft, natural tint' },
-  { label: 'Before', subtitle: 'Uneven tone' },
-  { label: 'Healed Result', subtitle: 'Balanced color' },
+  { label: 'Fresh Result', subtitle: 'Right after appointment' },
+  { label: 'Healed Result', subtitle: '4-6 weeks later' },
+  { label: 'Natural Definition', subtitle: 'Soft, blended color' },
 ]
 
 export function Gallery() {

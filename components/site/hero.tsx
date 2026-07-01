@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { Award, Heart, Star } from 'lucide-react'
 import { site } from '@/lib/site'
 import { WhatsAppIcon } from './icons'
 
@@ -13,6 +14,27 @@ const fadeUp = {
     transition: { duration: 0.9, delay: 0.15 * i, ease: [0.22, 1, 0.36, 1] },
   }),
 }
+
+const trustStats = [
+  {
+    icon: Award,
+    value: site.stats.yearsOfExperience,
+    label: 'years of experience',
+    suffix: '+',
+  },
+  {
+    icon: Heart,
+    value: site.stats.numberOfClients,
+    label: 'happy clients',
+    suffix: '+',
+  },
+  {
+    icon: Star,
+    value: site.stats.reviewRating,
+    label: 'Google rating',
+    suffix: '',
+  },
+]
 
 export function Hero() {
   return (
@@ -29,18 +51,28 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pt-28 pb-24 lg:px-10">
         <div className="max-w-2xl">
-          <motion.h1
+          <motion.p
             custom={0}
             initial="hidden"
             animate="show"
             variants={fadeUp}
-            className="font-serif text-4xl font-medium leading-[1.12] text-balance text-background sm:text-5xl lg:text-[3.25rem]"
+            className="text-xs font-medium uppercase tracking-[0.32em] text-background/85"
+          >
+            {site.city} Lip Blush Consultation
+          </motion.p>
+
+          <motion.h1
+            custom={1}
+            initial="hidden"
+            animate="show"
+            variants={fadeUp}
+            className="mt-4 font-serif text-4xl font-medium leading-[1.12] text-balance text-background sm:text-5xl lg:text-[3.25rem]"
           >
             Soft, Natural Lip Blush for Lips That Fade Without Makeup
           </motion.h1>
 
           <motion.p
-            custom={1}
+            custom={2}
             initial="hidden"
             animate="show"
             variants={fadeUp}
@@ -50,7 +82,7 @@ export function Hero() {
           </motion.p>
 
           <motion.p
-            custom={2}
+            custom={3}
             initial="hidden"
             animate="show"
             variants={fadeUp}
@@ -60,7 +92,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            custom={3}
+            custom={4}
             initial="hidden"
             animate="show"
             variants={fadeUp}
@@ -72,7 +104,7 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            custom={4}
+            custom={5}
             initial="hidden"
             animate="show"
             variants={fadeUp}
@@ -91,13 +123,34 @@ export function Hero() {
               Send a clear photo of your lips and get guidance before booking anything.
             </p>
           </motion.div>
+
+          {/* Trust placeholders */}
+          <motion.div
+            custom={6}
+            initial="hidden"
+            animate="show"
+            variants={fadeUp}
+            className="mt-12 flex flex-wrap gap-6"
+          >
+            {trustStats.map((stat) => {
+              const Icon = stat.icon
+              return (
+                <div key={stat.label} className="flex items-center gap-2 text-background/80">
+                  <Icon className="size-4" aria-hidden="true" />
+                  <span className="text-sm font-medium">
+                    {stat.value}{stat.suffix} {stat.label}
+                  </span>
+                </div>
+              )
+            })}
+          </motion.div>
         </div>
       </div>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 1 }}
+        transition={{ delay: 1.8, duration: 1 }}
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
       >
         <div className="flex h-11 w-6 items-start justify-center rounded-full border border-background/50 p-1.5">
