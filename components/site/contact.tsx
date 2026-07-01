@@ -1,8 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
-import { Clock } from 'lucide-react'
+import { Upload } from 'lucide-react'
 import { toast } from 'sonner'
 
 import { Input } from '@/components/ui/input'
@@ -14,7 +13,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import {
   Field,
   FieldGroup,
@@ -24,89 +22,42 @@ import { Reveal } from './reveal'
 import { SectionHeading } from './section-heading'
 
 const services = [
-  { value: 'first-session', label: 'Lip Blush — First Session' },
+  { value: 'lip-blush', label: 'Lip Blush' },
   { value: 'touch-up', label: 'Touch-Up' },
-  { value: 'advice', label: 'Not Sure Yet — Need Advice' },
-]
-
-const contactMethods = [
-  { value: 'whatsapp', label: 'WhatsApp' },
-  { value: 'email', label: 'Email' },
-  { value: 'phone', label: 'Phone Call' },
+  { value: 'not-sure', label: 'Not Sure — Need Advice' },
 ]
 
 export function Contact() {
   const [service, setService] = useState<string>('')
-  const [contactMethod, setContactMethod] = useState('whatsapp')
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     toast.success("Thanks! We'll be in touch within 24 hours.", {
-      description: 'Keep an eye on your preferred contact channel.',
+      description: 'Keep an eye on your WhatsApp or email.',
     })
     e.currentTarget.reset()
     setService('')
-    setContactMethod('whatsapp')
   }
 
   return (
     <section id="contact" className="scroll-mt-24 bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-2xl px-6 py-20 lg:px-10 lg:py-28">
         <SectionHeading
-          eyebrow="Get In Touch"
-          title="Book Your Free Consultation"
-          subtitle="Tell us a little about what you're after and we'll take it from there."
+          title="Send a Message"
+          subtitle="Tell us a little about what you're looking for."
         />
 
-        <div className="mt-14 grid overflow-hidden rounded-3xl border border-border bg-card shadow-sm lg:grid-cols-2">
-          {/* Image side */}
-          <Reveal className="relative min-h-72 lg:min-h-full">
-            <Image
-              src="/images/studio.png"
-              alt="Interior of the Maison Lèvres studio"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-foreground/20" />
-            <div className="absolute bottom-6 left-6 right-6 flex items-center gap-3 rounded-2xl bg-background/90 px-5 py-4 backdrop-blur-sm">
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/12 text-primary">
-                <Clock className="size-5" aria-hidden="true" />
-              </span>
-              <div>
-                <p className="text-sm font-medium text-foreground">
-                  Usually respond within a few hours
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Every enquiry is answered personally by your artist.
-                </p>
-              </div>
-            </div>
-          </Reveal>
+        <Reveal delay={0.1} className="mt-10">
+          <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
+            <FieldGroup>
+              <Field>
+                <FieldLabel htmlFor="name">Name</FieldLabel>
+                <Input id="name" name="name" placeholder="Your name" required />
+              </Field>
 
-          {/* Form side */}
-          <Reveal delay={0.1} className="p-8 lg:p-10">
-            <form onSubmit={handleSubmit}>
-              <FieldGroup>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <Field>
-                    <FieldLabel htmlFor="name">Full Name</FieldLabel>
-                    <Input id="name" name="name" placeholder="Your name" required />
-                  </Field>
-                  <Field>
-                    <FieldLabel htmlFor="email">Email</FieldLabel>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="you@email.com"
-                      required
-                    />
-                  </Field>
-                </div>
-
+              <div className="grid gap-5 sm:grid-cols-2">
                 <Field>
-                  <FieldLabel htmlFor="phone">Phone Number</FieldLabel>
+                  <FieldLabel htmlFor="phone">Phone / WhatsApp</FieldLabel>
                   <Input
                     id="phone"
                     name="phone"
@@ -114,67 +65,75 @@ export function Contact() {
                     placeholder="+44 7700 900000"
                   />
                 </Field>
-
                 <Field>
-                  <FieldLabel>Service Interested In</FieldLabel>
-                  <Select value={service} onValueChange={(v) => setService(v as string)}>
-                    <SelectTrigger className="w-full">
-                      <SelectValue>
-                        {service
-                          ? services.find((s) => s.value === service)?.label
-                          : 'Select a service'}
-                      </SelectValue>
-                    </SelectTrigger>
-                    <SelectContent>
-                      {services.map((s) => (
-                        <SelectItem key={s.value} value={s.value}>
-                          {s.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </Field>
-
-                <Field>
-                  <FieldLabel htmlFor="message">Message / Concerns</FieldLabel>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    placeholder="Tell us about your lips, any concerns, or questions you have..."
+                  <FieldLabel htmlFor="email">Email</FieldLabel>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@email.com"
+                    required
                   />
                 </Field>
+              </div>
 
-                <Field>
-                  <FieldLabel>Preferred Contact Method</FieldLabel>
-                  <RadioGroup
-                    value={contactMethod}
-                    onValueChange={(v) => setContactMethod(v as string)}
-                    className="grid-cols-3 gap-3"
-                  >
-                    {contactMethods.map((m) => (
-                      <label
-                        key={m.value}
-                        htmlFor={`contact-${m.value}`}
-                        className="flex cursor-pointer items-center gap-2 rounded-xl border border-border px-3 py-2.5 text-sm text-foreground transition-colors has-data-checked:border-primary has-data-checked:bg-primary/5"
-                      >
-                        <RadioGroupItem value={m.value} id={`contact-${m.value}`} />
-                        {m.label}
-                      </label>
+              <Field>
+                <FieldLabel>Service Interested In</FieldLabel>
+                <Select value={service} onValueChange={(v) => setService(v as string)}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue>
+                      {service
+                        ? services.find((s) => s.value === service)?.label
+                        : 'Select a service'}
+                    </SelectValue>
+                  </SelectTrigger>
+                  <SelectContent>
+                    {services.map((s) => (
+                      <SelectItem key={s.value} value={s.value}>
+                        {s.label}
+                      </SelectItem>
                     ))}
-                  </RadioGroup>
-                </Field>
+                  </SelectContent>
+                </Select>
+              </Field>
 
-                <button
-                  type="submit"
-                  className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+              <Field>
+                <FieldLabel htmlFor="concern">Main Concern / Message</FieldLabel>
+                <Textarea
+                  id="concern"
+                  name="concern"
+                  rows={3}
+                  placeholder="Tell us what you're hoping for or any questions you have..."
+                />
+              </Field>
+
+              <Field>
+                <FieldLabel htmlFor="photo">Photo (optional)</FieldLabel>
+                <label
+                  htmlFor="photo"
+                  className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-border bg-muted/30 px-4 py-6 text-sm text-muted-foreground transition-colors hover:border-primary hover:bg-primary/5 hover:text-foreground"
                 >
-                  Send My Message
-                </button>
-              </FieldGroup>
-            </form>
-          </Reveal>
-        </div>
+                  <Upload className="size-4" aria-hidden="true" />
+                  <span>Upload a photo of your lips</span>
+                </label>
+                <input
+                  id="photo"
+                  name="photo"
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                />
+              </Field>
+
+              <button
+                type="submit"
+                className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+              >
+                Send Message
+              </button>
+            </FieldGroup>
+          </form>
+        </Reveal>
       </div>
     </section>
   )

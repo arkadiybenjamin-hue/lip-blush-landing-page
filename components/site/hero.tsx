@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
 import { site } from '@/lib/site'
 import { WhatsAppIcon } from './icons'
 
@@ -18,51 +17,46 @@ const fadeUp = {
 export function Hero() {
   return (
     <section id="top" className="relative min-h-screen w-full overflow-hidden">
-      {/* Background image */}
       <Image
         src="/images/hero-lips.png"
-        alt="Close-up of soft, natural healed lip blush permanent makeup"
+        alt="Soft, natural lip blush permanent makeup"
         fill
         priority
         sizes="100vw"
         className="object-cover object-center"
       />
-      {/* Warm dark overlay for legibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-foreground/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-foreground/55 via-foreground/35 to-foreground/60" />
 
-      {/* Content */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pt-28 pb-24 lg:px-10">
         <div className="max-w-2xl">
-          <motion.p
+          <motion.h1
             custom={0}
             initial="hidden"
             animate="show"
             variants={fadeUp}
-            className="text-xs font-medium uppercase tracking-[0.32em] text-background/85"
+            className="font-serif text-4xl font-medium leading-[1.12] text-balance text-background sm:text-5xl lg:text-[3.25rem]"
           >
-            {site.city}&apos;s Trusted Lip Blush Studio
-          </motion.p>
+            Soft, Natural Lip Blush for Lips That Fade Without Makeup
+          </motion.h1>
 
-          <motion.h1
+          <motion.p
             custom={1}
             initial="hidden"
             animate="show"
             variants={fadeUp}
-            className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-balance text-background sm:text-5xl lg:text-6xl"
+            className="mt-6 max-w-xl text-base leading-relaxed text-pretty text-background/90 sm:text-lg"
           >
-            Lip Blush That Heals Soft, Natural, and Made for You
-          </motion.h1>
+            Custom lip blush for women who want soft color, better definition, and a natural healed result — without filler, harsh outlines, or a look that feels too made-up.
+          </motion.p>
 
           <motion.p
             custom={2}
             initial="hidden"
             animate="show"
             variants={fadeUp}
-            className="mt-6 max-w-xl text-base leading-relaxed text-pretty text-background/85 sm:text-lg"
+            className="mt-4 max-w-lg text-sm leading-relaxed text-pretty text-background/80"
           >
-            Not a one-color-fits-all tattoo. Every shade is custom-matched to
-            your skin tone, lip shape, and desired look — so results feel like
-            you, only softer and more defined.
+            If your lips look pale, uneven, or fade into your face without lipstick, lip blush can help them look more visible, balanced, and fresh.
           </motion.p>
 
           <motion.div
@@ -70,33 +64,40 @@ export function Hero() {
             initial="hidden"
             animate="show"
             variants={fadeUp}
-            className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
+            className="mt-6 flex flex-col gap-1.5 text-sm font-medium text-background/85"
+          >
+            <p>Not permanent lipstick.</p>
+            <p>Not a harsh outline.</p>
+            <p>Just your lips — softer, fresher, more defined.</p>
+          </motion.div>
+
+          <motion.div
+            custom={4}
+            initial="hidden"
+            animate="show"
+            variants={fadeUp}
+            className="mt-10"
           >
             <a
               href={site.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-primary px-8 py-4 text-base font-medium text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg"
             >
-              <WhatsAppIcon className="size-4" />
-              Send a Photo, Get a Free Consultation
+              <WhatsAppIcon className="size-5" />
+              Send a Photo for a Free Consultation
             </a>
-            <a
-              href="#gallery"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-background/60 bg-transparent px-8 py-4 text-sm font-medium text-background transition-all hover:bg-background hover:text-foreground"
-            >
-              View Before &amp; After
-              <ArrowRight className="size-4" />
-            </a>
+            <p className="mt-4 text-xs text-background/75">
+              Send a clear photo of your lips and get guidance before booking anything.
+            </p>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 1 }}
+        transition={{ delay: 1.6, duration: 1 }}
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
       >
         <div className="flex h-11 w-6 items-start justify-center rounded-full border border-background/50 p-1.5">

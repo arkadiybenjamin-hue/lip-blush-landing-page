@@ -1,12 +1,11 @@
 import { Navbar } from '@/components/site/navbar'
 import { Hero } from '@/components/site/hero'
-import { TrustBar } from '@/components/site/trust-bar'
 import { Service } from '@/components/site/service'
-import { BeforeAfter } from '@/components/site/before-after'
+import { GoodLipBlush } from '@/components/site/good-lip-blush'
+import { FocusAreas } from '@/components/site/focus-areas'
+import { Gallery } from '@/components/site/before-after'
 import { Process } from '@/components/site/process'
-import { Artist } from '@/components/site/artist'
-import { Testimonials } from '@/components/site/testimonials'
-import { Pricing } from '@/components/site/pricing'
+import { Healing } from '@/components/site/healing'
 import { Faq } from '@/components/site/faq'
 import { FinalCta } from '@/components/site/final-cta'
 import { Contact } from '@/components/site/contact'
@@ -18,13 +17,12 @@ export default function Page() {
       <Navbar />
       <main>
         <Hero />
-        <TrustBar />
         <Service />
-        <BeforeAfter />
+        <GoodLipBlush />
+        <FocusAreas />
+        <Gallery />
         <Process />
-        <Artist />
-        <Testimonials />
-        <Pricing />
+        <Healing />
         <Faq />
         <FinalCta />
         <Contact />

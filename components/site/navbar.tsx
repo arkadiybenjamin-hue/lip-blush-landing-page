@@ -63,7 +63,7 @@ export function Navbar() {
           className="hidden items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md md:inline-flex"
         >
           <WhatsAppIcon className="size-4" />
-          Free Consultation
+          Send a Photo
         </a>
 
         {/* Mobile toggle */}
@@ -104,7 +104,7 @@ export function Navbar() {
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground"
               >
                 <WhatsAppIcon className="size-4" />
-                Free Consultation
+                Send a Photo
               </a>
             </li>
           </ul>
