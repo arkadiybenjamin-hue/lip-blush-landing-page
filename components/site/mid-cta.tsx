@@ -6,27 +6,35 @@ import { Reveal } from './reveal'
 
 export function MidCta() {
   return (
-    <section className="bg-primary/8">
-      <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-10 lg:py-20">
+    <section className="bg-background">
+      <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-10 lg:py-24">
         <Reveal className="flex flex-col items-center">
-          <h2 className="max-w-xl font-serif text-2xl font-medium leading-[1.15] text-balance text-foreground sm:text-3xl">
-            Not sure what would suit your lips?
+          {/* Eyebrow */}
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
+            Take the First Step
+          </p>
+          {/* Headline with emphasis */}
+          <h2 className="mt-4 max-w-xl font-serif text-3xl font-semibold leading-[1.1] text-balance text-foreground sm:text-4xl lg:text-5xl">
+            Not sure what would{' '}
+            <span className="text-primary">suit your lips?</span>
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+          {/* Lighter copy */}
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Send a clear photo and get honest guidance on shade, shape, healing, and whether lip blush is right for you.
           </p>
 
+          {/* Large prominent CTA */}
           <a
             href={site.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center justify-center gap-2.5 rounded-full bg-primary px-8 py-4 text-base font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+            className="mt-10 inline-flex items-center justify-center gap-2.5 rounded-full bg-primary px-10 py-5 text-lg font-semibold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
           >
-            <WhatsAppIcon className="size-5" />
+            <WhatsAppIcon className="size-6" />
             Send a Photo for a Free Consultation
           </a>
 
-          <p className="mt-4 text-xs text-muted-foreground">
+          <p className="mt-4 text-sm text-muted-foreground">
             No pressure. No booking required just to ask.
           </p>
         </Reveal>

@@ -22,7 +22,7 @@ export const site = {
   // PLACEHOLDER: Replace with artist name
   artistName: '[Artist Name]',
   navLinks: [
-    { label: 'What Is Lip Blush', href: '#services' },
+    { label: 'Method', href: '#method' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Process', href: '#process' },
     { label: 'FAQ', href: '#faq' },

@@ -42,20 +42,27 @@ export function Contact() {
     <section id="contact" className="scroll-mt-24 bg-background">
       <div className="mx-auto max-w-2xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal className="text-center">
-          <h2 className="font-serif text-3xl font-medium leading-[1.15] text-balance text-foreground sm:text-4xl">
-            Or Send a Message
+          {/* Eyebrow */}
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
+            Prefer a Form?
+          </p>
+          {/* Bold headline */}
+          <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl">
+            Or Send a{' '}
+            <span className="text-primary">Message</span>
           </h2>
-          <p className="mt-4 text-base text-muted-foreground">
+          {/* Lighter copy */}
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Tell us a little about what you&apos;re looking for.
           </p>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-10">
+        <Reveal delay={0.1} className="mt-12">
           <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
             <FieldGroup>
               <Field>
                 <FieldLabel htmlFor="name">Name</FieldLabel>
-                <Input id="name" name="name" placeholder="Your name" required />
+                <Input id="name" name="name" placeholder="Your name" required className="h-12" />
               </Field>
 
               <div className="grid gap-5 sm:grid-cols-2">
@@ -66,6 +73,7 @@ export function Contact() {
                     name="phone"
                     type="tel"
                     placeholder="[WhatsApp Number]"
+                    className="h-12"
                   />
                 </Field>
                 <Field>
@@ -76,6 +84,7 @@ export function Contact() {
                     type="email"
                     placeholder="you@email.com"
                     required
+                    className="h-12"
                   />
                 </Field>
               </div>
@@ -83,7 +92,7 @@ export function Contact() {
               <Field>
                 <FieldLabel>Service Interested In</FieldLabel>
                 <Select value={service} onValueChange={(v) => setService(v as string)}>
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full h-12">
                     <SelectValue>
                       {service
                         ? services.find((s) => s.value === service)?.label
@@ -105,8 +114,9 @@ export function Contact() {
                 <Textarea
                   id="concern"
                   name="concern"
-                  rows={3}
+                  rows={4}
                   placeholder="Tell us what you're hoping for or any questions you have..."
+                  className="text-base"
                 />
               </Field>
 
@@ -114,10 +124,10 @@ export function Contact() {
                 <FieldLabel htmlFor="photo">Photo (optional)</FieldLabel>
                 <label
                   htmlFor="photo"
-                  className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-border bg-muted/30 px-4 py-6 text-sm text-muted-foreground transition-colors hover:border-primary hover:bg-primary/5 hover:text-foreground"
+                  className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-primary/40 bg-primary/5 px-4 py-8 text-sm text-muted-foreground transition-colors hover:border-primary hover:bg-primary/10 hover:text-foreground"
                 >
-                  <Upload className="size-4" aria-hidden="true" />
-                  <span>Upload a photo of your lips</span>
+                  <Upload className="size-5 text-primary" aria-hidden="true" />
+                  <span className="font-medium">Upload a photo of your lips</span>
                 </label>
                 <input
                   id="photo"
@@ -130,7 +140,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+                className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
               >
                 Send Message
               </button>

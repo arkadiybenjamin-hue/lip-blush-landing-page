@@ -11,13 +11,21 @@ const galleryPlaceholders = [
 
 export function Gallery() {
   return (
-    <section id="gallery" className="scroll-mt-24 bg-background">
+    <section id="gallery" className="scroll-mt-24 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal className="text-center">
-          <h2 className="font-serif text-3xl font-medium leading-[1.15] text-balance text-foreground sm:text-4xl lg:text-[2.75rem]">
-            Fresh results are pretty. Healed results are what matter.
+          {/* Eyebrow */}
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
+            Real Results
+          </p>
+          {/* Bold headline with emphasis */}
+          <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
+            Fresh results are pretty.{' '}
+            <span className="text-primary">Healed results</span>{' '}
+            are what matter.
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-base leading-relaxed text-muted-foreground">
+          {/* Lighter subheadline */}
+          <p className="mt-4 max-w-2xl mx-auto text-lg leading-relaxed text-muted-foreground">
             Lip blush can look more vivid right after the appointment, but the true result is how the color settles over time.
           </p>
         </Reveal>
@@ -35,15 +43,15 @@ export function Gallery() {
                 </div>
               </div>
               <div className="mt-3 text-center">
-                <p className="text-sm font-medium text-foreground">{item.label}</p>
-                <p className="text-xs text-muted-foreground">{item.subtitle}</p>
+                <p className="text-base font-semibold text-foreground">{item.label}</p>
+                <p className="text-sm text-muted-foreground">{item.subtitle}</p>
               </div>
             </Reveal>
           ))}
         </div>
 
         <Reveal delay={0.3}>
-          <p className="mt-10 text-center text-xs text-muted-foreground">
+          <p className="mt-10 text-center text-sm text-muted-foreground">
             Replace these with real client healed results.
           </p>
         </Reveal>

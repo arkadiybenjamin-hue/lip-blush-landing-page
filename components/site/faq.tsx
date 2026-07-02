@@ -45,11 +45,18 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section id="faq" className="scroll-mt-24 bg-secondary">
+    <section id="faq" className="scroll-mt-24 bg-background">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal className="text-center">
-          <h2 className="font-serif text-3xl font-medium leading-[1.15] text-balance text-foreground sm:text-4xl lg:text-[2.75rem]">
-            Questions Women Usually Ask Before Booking
+          {/* Eyebrow */}
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
+            Common Concerns
+          </p>
+          {/* Bold headline */}
+          <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
+            Questions Women{' '}
+            <span className="text-primary">Usually Ask</span>{' '}
+            Before Booking
           </h2>
         </Reveal>
 
@@ -61,10 +68,10 @@ export function Faq() {
                 value={faq.q}
                 className="border-b border-border"
               >
-                <AccordionTrigger className="py-5 font-serif text-lg font-medium text-foreground no-underline hover:no-underline aria-expanded:text-primary **:data-[slot=accordion-trigger-icon]:text-primary">
+                <AccordionTrigger className="py-6 font-serif text-xl font-semibold text-foreground no-underline hover:no-underline aria-expanded:text-primary **:data-[slot=accordion-trigger-icon]:text-primary **:data-[slot=accordion-trigger-icon]:size-5">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="pr-6 pb-6 text-[0.95rem] leading-relaxed text-muted-foreground">
+                <AccordionContent className="pr-6 pb-6 text-base leading-relaxed text-muted-foreground">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

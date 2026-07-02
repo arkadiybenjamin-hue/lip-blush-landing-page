@@ -33,11 +33,17 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="scroll-mt-24 bg-secondary">
+    <section id="process" className="scroll-mt-24 bg-background">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal className="text-center">
-          <h2 className="font-serif text-3xl font-medium leading-[1.15] text-balance text-foreground sm:text-4xl lg:text-[2.75rem]">
-            What Happens Next
+          {/* Eyebrow */}
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
+            Simple Steps
+          </p>
+          {/* Bold headline */}
+          <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
+            What Happens{' '}
+            <span className="text-primary">Next</span>
           </h2>
         </Reveal>
 
@@ -57,13 +63,13 @@ export function Process() {
                   delay={i * 0.1}
                   className="relative flex gap-5 lg:flex-col lg:gap-0"
                 >
-                  <div className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full border border-primary/30 bg-background font-serif text-lg font-medium text-primary shadow-sm">
+                  <div className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-primary/40 bg-background font-serif text-lg font-semibold text-primary shadow-sm">
                     {i + 1}
                   </div>
 
                   <div className="lg:mt-6">
                     <Icon className="size-5 text-primary lg:mb-3" strokeWidth={1.5} aria-hidden="true" />
-                    <h3 className="mt-2 font-serif text-lg font-medium text-foreground lg:mt-0">
+                    <h3 className="mt-2 font-serif text-xl font-semibold text-foreground lg:mt-0">
                       {step.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
