@@ -1,37 +1,45 @@
 'use client'
 
-import { MessageCircle, Palette, Sparkles, Heart } from 'lucide-react'
+import { Send as SendIcon, MessageCircle, Palette, Sparkles, Heart } from 'lucide-react'
 import { Reveal } from './reveal'
-import { SectionHeading } from './section-heading'
 
 const steps = [
   {
+    icon: SendIcon,
+    title: 'Send a photo',
+    description: "Send a clear photo of your lips and tell us what you want to improve.",
+  },
+  {
     icon: MessageCircle,
-    title: 'Free photo consultation',
-    description: 'Send a clear photo of your lips and describe the result you\'re hoping for.',
+    title: 'Get guidance',
+    description: "We'll help you understand what shade and result may suit you.",
   },
   {
     icon: Palette,
-    title: 'Color and shape planning',
-    description: 'We help choose a shade that suits your natural lip tone and goals.',
+    title: 'Plan the color',
+    description: 'Your color is chosen based on your natural lips, skin tone, and desired result.',
   },
   {
     icon: Sparkles,
-    title: 'Lip blush appointment',
+    title: 'Appointment',
     description: 'Numbing is used for comfort, and color is applied carefully in soft layers.',
   },
   {
     icon: Heart,
-    title: 'Healing and touch-up',
-    description: 'Lips may look brighter at first, then soften as they heal. A touch-up helps refine the color afterward.',
+    title: 'Healing support',
+    description: 'Your lips soften as they heal, and a touch-up can help refine the final color.',
   },
 ]
 
 export function Process() {
   return (
-    <section id="process" className="scroll-mt-24 bg-background">
+    <section id="process" className="scroll-mt-24 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-        <SectionHeading title="What to Expect" />
+        <Reveal className="text-center">
+          <h2 className="font-serif text-3xl font-medium leading-[1.15] text-balance text-foreground sm:text-4xl lg:text-[2.75rem]">
+            What Happens Next
+          </h2>
+        </Reveal>
 
         <div className="relative mt-16">
           <div
@@ -39,7 +47,7 @@ export function Process() {
             aria-hidden="true"
           />
 
-          <ol className="grid gap-10 lg:grid-cols-4 lg:gap-8">
+          <ol className="grid gap-8 lg:grid-cols-5 lg:gap-6">
             {steps.map((step, i) => {
               const Icon = step.icon
               return (
@@ -55,7 +63,7 @@ export function Process() {
 
                   <div className="lg:mt-6">
                     <Icon className="size-5 text-primary lg:mb-3" strokeWidth={1.5} aria-hidden="true" />
-                    <h3 className="mt-2 font-serif text-xl font-medium text-foreground lg:mt-0">
+                    <h3 className="mt-2 font-serif text-lg font-medium text-foreground lg:mt-0">
                       {step.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

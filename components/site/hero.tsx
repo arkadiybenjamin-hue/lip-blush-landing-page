@@ -68,7 +68,7 @@ export function Hero() {
             variants={fadeUp}
             className="mt-4 font-serif text-4xl font-medium leading-[1.12] text-balance text-background sm:text-5xl lg:text-[3.25rem]"
           >
-            Soft, Natural Lip Blush for Lips That Fade Without Makeup
+            Do your lips disappear unless you wear lipstick?
           </motion.h1>
 
           <motion.p
@@ -78,7 +78,7 @@ export function Hero() {
             variants={fadeUp}
             className="mt-6 max-w-xl text-base leading-relaxed text-pretty text-background/90 sm:text-lg"
           >
-            Custom lip blush for women who want soft color, better definition, and a natural healed result — without filler, harsh outlines, or a look that feels too made-up.
+            Soft, natural lip blush for pale, uneven, or faded lips — designed to heal like your own lips, only fresher and more defined.
           </motion.p>
 
           <motion.p
@@ -88,23 +88,11 @@ export function Hero() {
             variants={fadeUp}
             className="mt-4 max-w-lg text-sm leading-relaxed text-pretty text-background/80"
           >
-            If your lips look pale, uneven, or fade into your face without lipstick, lip blush can help them look more visible, balanced, and fresh.
+            If your lips look washed out without makeup, lip blush can help add soft color, improve definition, and make your natural lip shape look more visible.
           </motion.p>
 
           <motion.div
             custom={4}
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            className="mt-6 flex flex-col gap-1.5 text-sm font-medium text-background/85"
-          >
-            <p>Not permanent lipstick.</p>
-            <p>Not a harsh outline.</p>
-            <p>Just your lips — softer, fresher, more defined.</p>
-          </motion.div>
-
-          <motion.div
-            custom={5}
             initial="hidden"
             animate="show"
             variants={fadeUp}
@@ -124,9 +112,8 @@ export function Hero() {
             </p>
           </motion.div>
 
-          {/* Trust placeholders */}
           <motion.div
-            custom={6}
+            custom={5}
             initial="hidden"
             animate="show"
             variants={fadeUp}

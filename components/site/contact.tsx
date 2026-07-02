@@ -19,7 +19,6 @@ import {
   FieldLabel,
 } from '@/components/ui/field'
 import { Reveal } from './reveal'
-import { SectionHeading } from './section-heading'
 
 const services = [
   { value: 'lip-blush', label: 'Lip Blush' },
@@ -42,10 +41,14 @@ export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24 bg-background">
       <div className="mx-auto max-w-2xl px-6 py-20 lg:px-10 lg:py-28">
-        <SectionHeading
-          title="Send a Message"
-          subtitle="Tell us a little about what you're looking for."
-        />
+        <Reveal className="text-center">
+          <h2 className="font-serif text-3xl font-medium leading-[1.15] text-balance text-foreground sm:text-4xl">
+            Or Send a Message
+          </h2>
+          <p className="mt-4 text-base text-muted-foreground">
+            Tell us a little about what you&apos;re looking for.
+          </p>
+        </Reveal>
 
         <Reveal delay={0.1} className="mt-10">
           <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
@@ -62,7 +65,7 @@ export function Contact() {
                     id="phone"
                     name="phone"
                     type="tel"
-                    placeholder="+44 7700 900000"
+                    placeholder="[WhatsApp Number]"
                   />
                 </Field>
                 <Field>

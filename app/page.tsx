@@ -1,9 +1,10 @@
 import { Navbar } from '@/components/site/navbar'
 import { Hero } from '@/components/site/hero'
-import { Service } from '@/components/site/service'
-import { GoodLipBlush } from '@/components/site/good-lip-blush'
+import { Pain } from '@/components/site/pain'
+import { Solution } from '@/components/site/solution'
 import { FocusAreas } from '@/components/site/focus-areas'
 import { Gallery } from '@/components/site/before-after'
+import { MidCta } from '@/components/site/mid-cta'
 import { Process } from '@/components/site/process'
 import { Healing } from '@/components/site/healing'
 import { Faq } from '@/components/site/faq'
@@ -17,10 +18,11 @@ export default function Page() {
       <Navbar />
       <main>
         <Hero />
-        <Service />
-        <GoodLipBlush />
+        <Pain />
+        <Solution />
         <FocusAreas />
         <Gallery />
+        <MidCta />
         <Process />
         <Healing />
         <Faq />

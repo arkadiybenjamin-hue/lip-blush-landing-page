@@ -1,7 +1,6 @@
 'use client'
 
 import { Reveal } from './reveal'
-import { SectionHeading } from './section-heading'
 
 const galleryPlaceholders = [
   { label: 'Before', subtitle: 'Natural lips' },
@@ -12,16 +11,14 @@ const galleryPlaceholders = [
 
 export function Gallery() {
   return (
-    <section id="gallery" className="scroll-mt-24 bg-secondary">
+    <section id="gallery" className="scroll-mt-24 bg-background">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-        <SectionHeading
-          title="See the Difference"
-          subtitle="Healed results, not just fresh photos."
-        />
-
-        <Reveal delay={0.1}>
-          <p className="mt-4 max-w-2xl text-center text-base leading-relaxed text-muted-foreground">
-            Fresh lip blush can look more vivid at first, but the true result is how it settles over time.
+        <Reveal className="text-center">
+          <h2 className="font-serif text-3xl font-medium leading-[1.15] text-balance text-foreground sm:text-4xl lg:text-[2.75rem]">
+            Fresh results are pretty. Healed results are what matter.
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-base leading-relaxed text-muted-foreground">
+            Lip blush can look more vivid right after the appointment, but the true result is how the color settles over time.
           </p>
         </Reveal>
 
@@ -47,7 +44,7 @@ export function Gallery() {
 
         <Reveal delay={0.3}>
           <p className="mt-10 text-center text-xs text-muted-foreground">
-            Real client photos coming soon. These placeholders will be replaced with actual before and after results.
+            Replace these with real client healed results.
           </p>
         </Reveal>
       </div>

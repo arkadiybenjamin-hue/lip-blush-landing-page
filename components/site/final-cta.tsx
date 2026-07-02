@@ -1,6 +1,5 @@
 'use client'
 
-import { ChevronDown } from 'lucide-react'
 import { site } from '@/lib/site'
 import { WhatsAppIcon } from './icons'
 import { Reveal } from './reveal'
@@ -35,13 +34,9 @@ export function FinalCta() {
             Send a Photo for a Free Consultation
           </a>
 
-          <a
-            href="#contact"
-            className="mt-6 inline-flex flex-col items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            or fill out the form below
-            <ChevronDown className="size-4 animate-bounce" aria-hidden="true" />
-          </a>
+          <p className="mt-6 text-xs text-muted-foreground">
+            Pricing depends on your lips, desired result, and whether neutralization is needed. Send a photo for guidance.
+          </p>
         </Reveal>
       </div>
     </section>

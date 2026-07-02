@@ -7,44 +7,51 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { Reveal } from './reveal'
-import { SectionHeading } from './section-heading'
 
 const faqs = [
   {
+    q: 'Will it look fake?',
+    a: 'The goal is a soft, natural-looking result. Your color is chosen around your natural lip tone and the look you want.',
+  },
+  {
     q: 'Will it look like lipstick?',
-    a: "It depends on what you're going for — some people prefer a very soft tint, others want something closer to a lipstick look.",
+    a: 'It depends on your goal. Some people want a barely-there tint, while others want a more visible color. This is discussed during the consultation.',
   },
   {
     q: 'Will it look like lip liner?',
-    a: "The goal is soft, blended color rather than a hard outline.",
+    a: 'No. The goal is soft, blended color rather than a hard outline.',
   },
   {
     q: 'Can lip blush make my lips look bigger?',
-    a: "It doesn't add volume like filler, but it can make your natural lip shape look more visible and defined.",
+    a: "It does not add volume like filler, but it can make your natural lip shape look more visible and defined.",
   },
   {
     q: 'Will the color look too bright at first?',
-    a: "It can, for the first few days. It softens as it heals.",
+    a: 'It can look brighter during the first few days, then softens as it heals.',
   },
   {
     q: 'Does it hurt?',
-    a: "Some discomfort is normal since lips are sensitive. Numbing is used to help keep things comfortable.",
+    a: 'Some discomfort is normal because lips are sensitive. Numbing is used to help keep the treatment more comfortable.',
   },
   {
     q: 'How long does it last?',
-    a: "It varies by person — some hold color for a long time, others need a refresh sooner.",
+    a: 'It varies by person. Some people hold color longer than others, and some may need a refresh sooner.',
   },
   {
     q: 'What if I get cold sores?',
-    a: "Let your artist know before booking, since lip tattooing can sometimes trigger an outbreak. You may need to check with your doctor about antiviral medication beforehand.",
+    a: "Tell your artist before booking. Lip tattooing can sometimes trigger an outbreak, so you may need to speak with your doctor about antiviral medication beforehand.",
   },
 ]
 
 export function Faq() {
   return (
-    <section id="faq" className="scroll-mt-24 bg-background">
+    <section id="faq" className="scroll-mt-24 bg-secondary">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
-        <SectionHeading title="Common Questions" />
+        <Reveal className="text-center">
+          <h2 className="font-serif text-3xl font-medium leading-[1.15] text-balance text-foreground sm:text-4xl lg:text-[2.75rem]">
+            Questions Women Usually Ask Before Booking
+          </h2>
+        </Reveal>
 
         <Reveal className="mt-14">
           <Accordion className="w-full" defaultValue={[faqs[0].q]}>
