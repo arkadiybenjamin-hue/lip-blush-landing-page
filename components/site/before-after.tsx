@@ -1,12 +1,12 @@
 'use client'
 
+import Image from 'next/image'
 import { Reveal } from './reveal'
 
 const galleryPlaceholders = [
-  { label: 'Before', subtitle: 'Natural lips' },
-  { label: 'Fresh Result', subtitle: 'Right after appointment' },
-  { label: 'Healed Result', subtitle: '4-6 weeks later' },
-  { label: 'Natural Definition', subtitle: 'Soft, blended color' },
+  { label: 'Before', subtitle: 'Natural lips', image: '/images/resultbefore1.jpg' },
+  { label: 'Fresh Result', subtitle: 'Right after appointment', image: '/images/rightafter1.jpg' },
+  { label: 'Healed Result', subtitle: '4-6 weeks later', image: '/images/monthafter1.jpg' },
 ]
 
 export function Gallery() {
@@ -38,9 +38,18 @@ export function Gallery() {
               className="flex flex-col"
             >
               <div className="relative aspect-square w-full overflow-hidden rounded-3xl bg-muted border-2 border-dashed border-border">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground">
-                  <span className="text-xs uppercase tracking-wide">Photo Placeholder</span>
-                </div>
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.label}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground">
+                    <span className="text-xs uppercase tracking-wide">Photo Placeholder</span>
+                  </div>
+                )}
               </div>
               <div className="mt-3 text-center">
                 <p className="text-base font-semibold text-foreground">{item.label}</p>
@@ -49,12 +58,6 @@ export function Gallery() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={0.3}>
-          <p className="mt-10 text-center text-sm text-muted-foreground">
-            Replace these with real client healed results.
-          </p>
-        </Reveal>
       </div>
     </section>
   )
