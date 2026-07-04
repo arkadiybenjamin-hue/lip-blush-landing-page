@@ -50,9 +50,7 @@ export function Faq() {
         <Reveal className="text-center">
           {/* Bold headline */}
           <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
-            Questions Women{' '}
-            <span className="text-primary">Usually Ask</span>{' '}
-            Before Booking
+            Frequently Asked Questions
           </h2>
         </Reveal>
 

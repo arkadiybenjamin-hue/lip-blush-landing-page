@@ -38,10 +38,6 @@ export function FinalCta() {
             <WhatsAppIcon className="size-6" />
             Send a Photo for a Free Consultation
           </a>
-
-          <p className="mt-6 text-sm text-muted-foreground">
-            Pricing depends on your lips, desired result, and whether neutralization is needed. Send a photo for guidance.
-          </p>
         </Reveal>
       </div>
     </section>
