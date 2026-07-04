@@ -15,10 +15,6 @@ export function Pain() {
     <section className="bg-secondary">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal className="text-center">
-          {/* Eyebrow */}
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-            Sound Familiar?
-          </p>
           {/* Bold headline with emphasis */}
           <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
             You probably don&apos;t want{' '}

@@ -7,10 +7,6 @@ export function Healing() {
     <section id="healing" className="scroll-mt-24 bg-secondary">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal className="text-center">
-          {/* Eyebrow */}
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-            Recovery
-          </p>
           {/* Bold headline */}
           <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
             What to Expect While Your Lips{' '}

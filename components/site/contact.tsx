@@ -42,19 +42,11 @@ export function Contact() {
     <section id="contact" className="scroll-mt-24 bg-background">
       <div className="mx-auto max-w-2xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal className="text-center">
-          {/* Eyebrow */}
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-            Prefer a Form?
-          </p>
           {/* Bold headline */}
           <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl">
             Or Send a{' '}
             <span className="text-primary">Message</span>
           </h2>
-          {/* Lighter copy */}
-          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Tell us a little about what you&apos;re looking for.
-          </p>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-12">

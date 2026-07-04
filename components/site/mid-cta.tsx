@@ -9,10 +9,6 @@ export function MidCta() {
     <section className="bg-background">
       <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-10 lg:py-24">
         <Reveal className="flex flex-col items-center">
-          {/* Eyebrow */}
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-            Take the First Step
-          </p>
           {/* Headline with emphasis */}
           <h2 className="mt-4 max-w-xl font-serif text-3xl font-semibold leading-[1.1] text-balance text-foreground sm:text-4xl lg:text-5xl">
             Not sure what would{' '}
@@ -34,9 +30,6 @@ export function MidCta() {
             Send a Photo for a Free Consultation
           </a>
 
-          <p className="mt-4 text-sm text-muted-foreground">
-            No pressure. No booking required just to ask.
-          </p>
         </Reveal>
       </div>
     </section>

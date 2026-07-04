@@ -47,17 +47,6 @@ export function Hero() {
 
           {/* LEFT — Copy */}
           <div className="flex flex-col">
-            {/* Eyebrow */}
-            <motion.p
-              custom={0}
-              initial="hidden"
-              animate="show"
-              variants={fadeUp}
-              className="text-xs font-semibold uppercase tracking-[0.28em] text-primary"
-            >
-              {site.city} Lip Blush Consultation
-            </motion.p>
-
             {/* Headline */}
             <motion.h1
               custom={1}
@@ -132,9 +121,6 @@ export function Hero() {
                 <WhatsAppIcon className="size-5" />
                 Send a Photo for a Free Consultation
               </a>
-              <p className="mt-3 text-sm text-muted-foreground">
-                No pressure. No booking required just to ask.
-              </p>
             </motion.div>
 
             {/* Trust stats */}

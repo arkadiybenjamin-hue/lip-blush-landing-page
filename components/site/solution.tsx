@@ -9,10 +9,6 @@ export function Solution() {
     <section className="bg-background">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal className="text-center">
-          {/* Eyebrow */}
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-            Here&apos;s the Clear Answer
-          </p>
           {/* Bold pivot headline */}
           <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
             That&apos;s exactly why we use a{' '}
@@ -34,7 +30,7 @@ export function Solution() {
             <p className="text-base font-medium text-foreground/80">Not a harsh outline.</p>
             <p className="text-base font-medium text-foreground/80">Not a one-color-fits-all tattoo.</p>
             <p className="mt-4 text-lg font-semibold text-primary">
-              Just your lips — softer, fresher, more defined.
+              Just your lips actually visible.
             </p>
           </div>
         </Reveal>
