@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Award, Heart, Star } from 'lucide-react'
 import { site } from '@/lib/site'
 
 const fadeUp = {
@@ -14,32 +13,11 @@ const fadeUp = {
   }),
 }
 
-const trustStats = [
-  {
-    icon: Award,
-    value: site.stats.yearsOfExperience,
-    label: 'years of experience',
-    suffix: '+',
-  },
-  {
-    icon: Heart,
-    value: site.stats.numberOfClients,
-    label: 'happy clients',
-    suffix: '+',
-  },
-  {
-    icon: Star,
-    value: site.stats.reviewRating,
-    label: 'Google rating',
-    suffix: '',
-  },
-]
-
 export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate w-full overflow-hidden bg-background pt-28 pb-20 lg:pt-36 lg:pb-28"
+      className="relative isolate flex min-h-screen w-full items-center overflow-hidden bg-background pt-28 pb-20 lg:pt-36 lg:pb-28"
     >
       <div className="pointer-events-none absolute inset-0">
         <Image
@@ -74,9 +52,6 @@ export function Hero() {
               variants={fadeUp}
               className="mt-6 space-y-4 text-base leading-relaxed text-stone-200"
             >
-              <p>
-                If your lips look pale, uneven, or washed out without makeup, you probably know the feeling.
-              </p>
               <ul className="space-y-1.5 pl-4">
                 {[
                   'You put on lipstick just to feel "finished."',
@@ -89,46 +64,6 @@ export function Hero() {
                   </li>
                 ))}
               </ul>
-              <p>
-                And even if you like the idea of lip blush, you may still worry:
-              </p>
-              <ul className="space-y-1.5 pl-4">
-                {[
-                  'Will it look too bright?',
-                  'Will it look fake?',
-                  'Will it heal badly?',
-                  'Will it look like a harsh tattoo?',
-                ].map((line) => (
-                  <li key={line} className="flex items-start gap-2">
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="font-medium text-stone-100">
-                That&apos;s why the first step is simple: send a photo and get guidance before booking anything.
-              </p>
-            </motion.div>
-
-            <motion.div
-              custom={4}
-              initial="hidden"
-              animate="show"
-              variants={fadeUp}
-              className="mt-10 flex flex-wrap gap-6 border-t border-white/20 pt-8"
-            >
-              {trustStats.map((stat) => {
-                const Icon = stat.icon
-                return (
-                  <div key={stat.label} className="flex items-center gap-2">
-                    <Icon className="size-4 text-primary" aria-hidden="true" />
-                    <span className="text-sm font-semibold text-stone-100">
-                      {stat.value}{stat.suffix}{' '}
-                      <span className="font-normal text-stone-300">{stat.label}</span>
-                    </span>
-                  </div>
-                )
-              })}
             </motion.div>
           </div>
         </div>
