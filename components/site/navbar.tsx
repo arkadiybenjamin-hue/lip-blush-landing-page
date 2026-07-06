@@ -60,7 +60,7 @@ export function Navbar() {
           href={site.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg md:inline-flex"
+          className="hidden items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#20bd5a] hover:shadow-lg md:inline-flex"
         >
           <WhatsAppIcon className="size-4" />
           Send a Photo
@@ -101,7 +101,7 @@ export function Navbar() {
                 href={site.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-medium text-white"
               >
                 <WhatsAppIcon className="size-4" />
                 Send a Photo

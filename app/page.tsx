@@ -11,7 +11,6 @@ import { Faq } from '@/components/site/faq'
 import { FinalCta } from '@/components/site/final-cta'
 import { Contact } from '@/components/site/contact'
 import { Footer } from '@/components/site/footer'
-import { FloatingCta } from '@/components/site/floating-cta'
 
 export default function Page() {
   return (
@@ -31,7 +30,6 @@ export default function Page() {
         <Contact />
       </main>
       <Footer />
-      <FloatingCta />
     </div>
   )
 }

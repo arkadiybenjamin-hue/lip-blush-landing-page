@@ -1,7 +1,5 @@
 'use client'
 
-import { site } from '@/lib/site'
-import { WhatsAppIcon } from './icons'
 import { Reveal } from './reveal'
 
 export function Solution() {
@@ -33,18 +31,6 @@ export function Solution() {
               Just your lips actually visible.
             </p>
           </div>
-        </Reveal>
-
-        <Reveal delay={0.2} className="mt-12 flex justify-center">
-          <a
-            href={site.whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
-          >
-            <WhatsAppIcon className="size-5" />
-            Send a Photo for a Free Consultation
-          </a>
         </Reveal>
       </div>
     </section>
