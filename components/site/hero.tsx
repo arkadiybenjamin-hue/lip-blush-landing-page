@@ -60,11 +60,11 @@ export function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="mt-4 font-serif text-4xl font-semibold leading-[1.08] text-balance text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl"
+              className="mt-4 font-serif text-4xl font-bold leading-[1.08] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl"
             >
-              Do your lips{' '}
+              DO YOUR LIPS{' '}
               <span className="text-rose-300">disappear</span>{' '}
-              unless you wear lipstick?
+              UNLESS YOU WEAR LIPSTICK?
             </motion.h1>
 
             <motion.div
