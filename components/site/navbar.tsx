@@ -30,6 +30,22 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (!menuOpen) {
+      document.documentElement.style.overflow = ''
+      document.body.style.overflow = ''
+      return
+    }
+
+    document.documentElement.style.overflow = 'hidden'
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.documentElement.style.overflow = ''
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
   return (
     <>
       <header
@@ -95,25 +111,68 @@ export function Navbar() {
           </button>
         </nav>
 
-        {/* Mobile menu */}
-        {menuOpen && (
-          <div className="border-t border-border/70 bg-background/95 backdrop-blur-md md:hidden">
-            <ul className="flex flex-col gap-1 px-6 py-4">
+      </header>
+
+      <div
+        className={cn(
+          'fixed inset-0 z-[60] box-border bg-background px-6 py-6 transition-all duration-300 ease-out md:hidden',
+          menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0',
+        )}
+        aria-hidden={!menuOpen}
+      >
+        <div
+          className={cn(
+            'flex h-full flex-col transition-all duration-300 ease-out',
+            menuOpen ? 'translate-y-0' : '-translate-y-3',
+          )}
+        >
+          <div className="flex h-20 items-center justify-between">
+            <a
+              href="#top"
+              onClick={() => setMenuOpen(false)}
+              className="font-serif text-xl font-semibold uppercase tracking-[0.28em] text-foreground sm:text-2xl"
+            >
+              {site.name}
+            </a>
+
+            <button
+              type="button"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+              className="inline-flex size-10 items-center justify-center rounded-full text-foreground transition-colors"
+            >
+              <X className="size-6" />
+            </button>
+          </div>
+
+          <nav className="flex flex-1 flex-col justify-between pt-8 pb-6">
+            <ul className="flex flex-col gap-3">
               {site.navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="block rounded-lg px-2 py-3 text-base font-medium text-foreground/85 transition-colors hover:bg-secondary hover:text-primary"
+                    className="block rounded-xl px-2 py-4 text-2xl font-medium tracking-wide text-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
-        )}
-      </header>
+
+            <a
+              href={site.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-base font-semibold text-white shadow-lg transition-all hover:bg-[#20bd5a] hover:shadow-xl"
+            >
+              <WhatsAppIcon className="size-5" />
+              Send a Photo
+            </a>
+          </nav>
+        </div>
+      </div>
 
       {showMobileCta && !menuOpen && (
         <div className="pointer-events-none fixed inset-x-0 bottom-0 z-50 px-4 pb-4 md:hidden">
