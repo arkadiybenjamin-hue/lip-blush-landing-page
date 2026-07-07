@@ -56,6 +56,29 @@ export function Hero() {
                 You put on lipstick just to feel "finished," even when your lip border looks faded and your lips just blend into your face in photos.
               </p>
             </motion.div>
+
+            <motion.div
+              custom={3}
+              initial="hidden"
+              animate="show"
+              variants={fadeUp}
+              className="mt-8 flex flex-col gap-3 sm:flex-row"
+            >
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-foreground shadow-lg transition-all hover:bg-stone-100"
+              >
+                Get a consultation
+              </a>
+              <a
+                href={site.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#20bd5a]"
+              >
+                Send us a photo
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>
