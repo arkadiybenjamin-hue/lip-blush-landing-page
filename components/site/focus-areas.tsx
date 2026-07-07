@@ -5,7 +5,7 @@ import { Reveal } from './reveal'
 const methods = [
   {
     title: 'Color matched to your lips',
-    description: 'Your shade is chosen based on your natural lip tone, skin tone, and the result you want — not a random pink used on everyone.',
+    description: 'Your shade is chosen based on your natural lip tone, skin tone, and the result you want not a random pink used on everyone.',
     emphasis: 'your natural lip tone',
   },
   {
@@ -32,8 +32,7 @@ export function FocusAreas() {
         <Reveal className="text-center">
           {/* Bold headline */}
           <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
-            How We Keep Lip Blush{' '}
-            <span className="text-primary">Looking Natural</span>
+            HOW WE KEEP LIP BLUSH LOOKING NATURAL
           </h2>
           {/* Lighter subheadline */}
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
@@ -55,7 +54,7 @@ export function FocusAreas() {
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {parts[0]}
-                  <span className="font-semibold text-primary">{method.emphasis}</span>
+                  <span className="font-semibold text-muted-foreground">{method.emphasis}</span>
                   {parts[1]}
                 </p>
               </Reveal>

@@ -16,9 +16,7 @@ export function FinalCta() {
         <Reveal className="flex flex-col items-center">
           {/* Bold headline */}
           <h2 className="mt-4 max-w-2xl font-serif text-4xl font-bold leading-[1.1] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl">
-            READY TO SEE WHAT&apos;S{' '}
-            <span className="text-primary">POSSIBLE</span>{' '}
-            FOR YOUR LIPS?
+            READY TO SEE WHAT&apos;S POSSIBLE FOR YOUR LIPS?
           </h2>
           {/* Lighter copy */}
           <div className="mt-6 space-y-3 text-lg leading-relaxed text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">

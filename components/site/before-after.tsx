@@ -1,24 +1,21 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
 import { Reveal } from './reveal'
 
-const galleryPlaceholders = [
-  { label: 'Before', subtitle: 'Natural lips', image: '/images/resultbefore1.jpg' },
-  { label: 'Fresh Result', subtitle: 'Right after appointment', image: '/images/rightafter1.jpg' },
-  { label: 'Healed Result', subtitle: '4-6 weeks later', image: '/images/monthafter1.jpg' },
-]
-
 export function Gallery() {
+  const [sliderValue, setSliderValue] = useState(50)
+
   return (
     <section id="gallery" className="scroll-mt-24 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal className="text-center">
           {/* Bold headline with emphasis */}
           <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
-            Fresh results are pretty.{' '}
-            <span className="text-primary">Healed results</span>{' '}
-            are what matter.
+            FRESH RESULTS ARE PRETTY.
+            <br />
+            HEALED RESULTS ARE WHAT MATTER.
           </h2>
           {/* Lighter subheadline */}
           <p className="mt-4 max-w-2xl mx-auto text-lg leading-relaxed text-muted-foreground">
@@ -26,34 +23,55 @@ export function Gallery() {
           </p>
         </Reveal>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {galleryPlaceholders.map((item, i) => (
-            <Reveal
-              key={`${item.label}-${i}`}
-              delay={(i % 4) * 0.1}
-              className="flex flex-col"
-            >
-              <div className="relative aspect-square w-full overflow-hidden rounded-3xl bg-muted border-2 border-dashed border-border">
-                {item.image ? (
+        <Reveal delay={0.1} className="mx-auto mt-12 w-full max-w-full px-4 sm:px-6">
+          <div className="box-border mx-auto w-full max-w-[420px] rounded-[12px] bg-card p-2 shadow-sm sm:p-3">
+            <div className="relative aspect-[4/3] w-full max-w-full overflow-hidden rounded-[12px] bg-muted">
+              <Image
+                src="/images/Lip_blush_before_and_after_copy_2.webp"
+                alt="Before lip blush result"
+                fill
+                className="object-cover"
+              />
+              <div
+                className="absolute inset-y-0 left-0 overflow-hidden"
+                style={{ width: `${sliderValue}%` }}
+              >
+                <div className="relative h-full w-full">
                   <Image
-                    src={item.image}
-                    alt={item.label}
+                    src="/images/Lip_blush_before_and_after.webp"
+                    alt="After lip blush result"
                     fill
                     className="object-cover"
                   />
-                ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground">
-                    <span className="text-xs uppercase tracking-wide">Photo Placeholder</span>
-                  </div>
-                )}
+                </div>
               </div>
-              <div className="mt-3 text-center">
-                <p className="text-base font-semibold text-foreground">{item.label}</p>
-                <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+              <div
+                className="absolute inset-y-0 z-10 w-0.5 bg-white/95 shadow-[0_0_0_1px_rgba(0,0,0,0.08)]"
+                style={{ left: `clamp(20px, ${sliderValue}%, calc(100% - 20px))` }}
+                aria-hidden="true"
+              >
+                <div className="absolute top-1/2 left-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/80 bg-white text-xs font-semibold text-foreground shadow-md">
+                  &lt;&gt;
+                </div>
               </div>
-            </Reveal>
-          ))}
-        </div>
+              <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex justify-between p-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+                <span>Before</span>
+                <span>After</span>
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={sliderValue}
+                onChange={(event) => setSliderValue(Number(event.target.value))}
+                className="absolute inset-0 z-20 h-full w-full cursor-ew-resize appearance-none bg-transparent
+             [&::-webkit-slider-thumb]:h-full [&::-webkit-slider-thumb]:w-1 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:bg-transparent [&::-webkit-slider-thumb]:opacity-0
+             [&::-moz-range-thumb]:h-full [&::-moz-range-thumb]:w-1 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-transparent [&::-moz-range-thumb]:opacity-0"
+                aria-label="Compare before and after lip blush results"
+              />
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

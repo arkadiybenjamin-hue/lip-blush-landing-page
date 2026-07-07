@@ -52,18 +52,9 @@ export function Hero() {
               variants={fadeUp}
               className="mt-6 space-y-4 text-base leading-relaxed text-stone-200"
             >
-              <ul className="space-y-1.5 pl-4">
-                {[
-                  'You put on lipstick just to feel "finished."',
-                  'Your natural lip border looks faded.',
-                  'Your lips blend into your face in photos.',
-                ].map((line) => (
-                  <li key={line} className="flex items-start gap-2">
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
+              <p>
+                You put on lipstick just to feel "finished," even when your lip border looks faded and your lips just blend into your face in photos.
+              </p>
             </motion.div>
           </div>
         </div>

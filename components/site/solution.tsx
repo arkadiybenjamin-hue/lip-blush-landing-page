@@ -15,7 +15,7 @@ export function Solution() {
           {/* Bold pivot headline */}
           <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl">
             THAT&apos;S EXACTLY WHY WE USE A{' '}
-            <span className="text-primary">soft, custom</span>{' '}
+            <span className="font-bold text-stone-50">SOFT, CUSTOM</span>{' '}
             LIP BLUSH APPROACH.
           </h2>
         </Reveal>
@@ -27,12 +27,11 @@ export function Solution() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="mt-10 flex flex-col items-center gap-3 text-center">
-            <p className="text-base font-medium text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">Not permanent lipstick.</p>
+          <div className="mt-6 flex flex-col items-center gap-3 text-center">
             <p className="text-base font-medium text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">Not a harsh outline.</p>
             <p className="text-base font-medium text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">Not a one-color-fits-all tattoo.</p>
-            <p className="mt-4 text-lg font-bold text-primary drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">
-              Just your lips actually visible.
+            <p className="mt-4 text-lg font-bold text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">
+              Your lips actually visible.
             </p>
           </div>
         </Reveal>

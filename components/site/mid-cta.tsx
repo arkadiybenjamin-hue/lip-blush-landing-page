@@ -14,8 +14,7 @@ export function MidCta() {
         <Reveal className="flex flex-col items-center">
           {/* Headline with emphasis */}
           <h2 className="mt-4 max-w-xl font-serif text-3xl font-semibold leading-[1.1] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-4xl lg:text-5xl">
-            NOT SURE WHAT WOULD{' '}
-            <span className="text-primary">suit your lips?</span>
+            NOT SURE WHAT WOULD SUIT YOUR LIPS?
           </h2>
           {/* Lighter copy */}
           <p className="mt-4 text-lg leading-relaxed text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">
