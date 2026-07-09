@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { Reveal } from './reveal'
+import { Reveal, RevealGroup, RevealItem } from './reveal'
 
 const faqs = [
   {
@@ -47,12 +47,14 @@ export function Faq() {
   return (
     <section id="faq" className="scroll-mt-24 bg-background">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
-        <Reveal className="text-center">
+        <RevealGroup className="text-center">
           {/* Bold headline */}
-          <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
-            Frequently Asked Questions
-          </h2>
-        </Reveal>
+          <RevealItem as="div">
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
+              Frequently Asked Questions
+            </h2>
+          </RevealItem>
+        </RevealGroup>
 
         <Reveal className="mt-14">
           <Accordion className="w-full" defaultValue={[faqs[0].q]}>

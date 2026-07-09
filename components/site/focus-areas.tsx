@@ -1,6 +1,6 @@
 'use client'
 
-import { Reveal } from './reveal'
+import { Reveal, RevealGroup, RevealItem } from './reveal'
 
 const methods = [
   {
@@ -29,16 +29,18 @@ export function FocusAreas() {
   return (
     <section id="method" className="scroll-mt-24 bg-background">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-        <Reveal className="text-center">
+        <RevealGroup className="text-center">
           {/* Bold headline */}
-          <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
-            HOW WE KEEP LIP BLUSH LOOKING NATURAL
-          </h2>
+          <RevealItem as="div">
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
+              HOW WE KEEP LIP BLUSH LOOKING NATURAL
+            </h2>
+          </RevealItem>
           {/* Lighter subheadline */}
-          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+          <RevealItem as="p" className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Good lip blush should not look like a harsh tattoo.
-          </p>
-        </Reveal>
+          </RevealItem>
+        </RevealGroup>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {methods.map((method, i) => {

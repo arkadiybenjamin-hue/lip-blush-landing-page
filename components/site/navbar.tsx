@@ -1,15 +1,20 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { site } from '@/lib/site'
 import { WhatsAppIcon } from './icons'
 
+const SECTION_IDS = ['method', 'gallery', 'process', 'faq', 'contact'] as const
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [showMobileCta, setShowMobileCta] = useState(false)
+  const [hasPassedHero, setHasPassedHero] = useState(false)
+  const [activeSection, setActiveSection] = useState<string | null>(null)
 
   useEffect(() => {
     const hero = document.getElementById('top')
@@ -19,15 +24,77 @@ export function Navbar() {
 
       if (!hero) {
         setShowMobileCta(false)
+        setHasPassedHero(false)
         return
       }
 
-      setShowMobileCta(hero.getBoundingClientRect().bottom <= 0)
+      const heroPassed = hero.getBoundingClientRect().bottom <= 0
+      setShowMobileCta(heroPassed)
+      setHasPassedHero(heroPassed)
     }
 
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter(
+      (section): section is HTMLElement => Boolean(section),
+    )
+
+    if (!sections.length) {
+      return
+    }
+
+    const visibleHeights = new Map<string, number>()
+    const sectionOrder = new Map(SECTION_IDS.map((id, index) => [id, index]))
+
+    const updateMostVisibleSection = () => {
+      let nextSection: string | null = null
+      let maxVisibleHeight = 0
+
+      for (const id of SECTION_IDS) {
+        const visibleHeight = visibleHeights.get(id) ?? 0
+
+        if (visibleHeight > maxVisibleHeight) {
+          maxVisibleHeight = visibleHeight
+          nextSection = id
+          continue
+        }
+
+        if (
+          visibleHeight === maxVisibleHeight &&
+          visibleHeight > 0 &&
+          nextSection &&
+          (sectionOrder.get(id) ?? 0) < (sectionOrder.get(nextSection) ?? 0)
+        ) {
+          nextSection = id
+        }
+      }
+
+      setActiveSection(nextSection)
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          visibleHeights.set(
+            entry.target.id,
+            entry.isIntersecting ? entry.intersectionRect.height : 0,
+          )
+        }
+
+        updateMostVisibleSection()
+      },
+      {
+        threshold: Array.from({ length: 21 }, (_, index) => index / 20),
+      },
+    )
+
+    sections.forEach((section) => observer.observe(section))
+
+    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
@@ -70,19 +137,36 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <ul className="hidden items-center gap-10 md:flex">
-            {site.navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className={cn(
-                    'text-sm font-medium tracking-wide transition-colors hover:text-primary',
-                    scrolled ? 'text-foreground/80' : 'text-background/90',
-                  )}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {site.navLinks.map((link) => {
+              const sectionId = link.href.replace('#', '')
+              const isActive = hasPassedHero && activeSection === sectionId
+
+              return (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    aria-current={isActive ? 'location' : undefined}
+                    className={cn(
+                      'relative inline-flex pb-1 text-sm font-medium tracking-wide transition-colors hover:text-primary',
+                      isActive
+                        ? 'text-primary'
+                        : scrolled
+                          ? 'text-foreground/80'
+                          : 'text-background/90',
+                    )}
+                  >
+                    <span>{link.label}</span>
+                    {isActive && (
+                      <motion.span
+                        layoutId="navbar-active-underline"
+                        className="absolute right-0 -bottom-0.5 left-0 h-0.5 rounded-full bg-primary"
+                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                      />
+                    )}
+                  </a>
+                </li>
+              )
+            })}
           </ul>
 
           {/* Desktop CTA */}
@@ -90,9 +174,9 @@ export function Navbar() {
             href={site.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#20bd5a] hover:shadow-lg md:inline-flex"
+            className="cta-primary-interaction hidden items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#20bd5a] md:inline-flex"
           >
-            <WhatsAppIcon className="size-4" />
+            <WhatsAppIcon className="cta-whatsapp-icon size-4" />
             Send a Photo
           </a>
 
@@ -165,9 +249,9 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-base font-semibold text-white shadow-lg transition-all hover:bg-[#20bd5a] hover:shadow-xl"
+              className="cta-primary-interaction inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-base font-semibold text-white shadow-lg hover:bg-[#20bd5a]"
             >
-              <WhatsAppIcon className="size-5" />
+              <WhatsAppIcon className="cta-whatsapp-icon size-5" />
               Send a Photo
             </a>
           </nav>
@@ -180,9 +264,9 @@ export function Navbar() {
             href={site.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="pointer-events-auto inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#20bd5a] hover:shadow-xl"
+            className="cta-primary-interaction pointer-events-auto inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-lg hover:bg-[#20bd5a]"
           >
-            <WhatsAppIcon className="size-4" />
+            <WhatsAppIcon className="cta-whatsapp-icon size-4" />
             Send a Photo
           </a>
         </div>

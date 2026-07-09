@@ -18,7 +18,7 @@ import {
   FieldGroup,
   FieldLabel,
 } from '@/components/ui/field'
-import { Reveal } from './reveal'
+import { Reveal, RevealGroup, RevealItem } from './reveal'
 
 const services = [
   { value: 'lip-blush', label: 'Lip Blush' },
@@ -41,13 +41,15 @@ export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24 bg-background">
       <div className="mx-auto max-w-2xl px-6 py-20 lg:px-10 lg:py-28">
-        <Reveal className="text-center">
+        <RevealGroup className="text-center">
           {/* Bold headline */}
-          <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl">
-            Or Send a{' '}
-            <span className="text-primary">Message</span>
-          </h2>
-        </Reveal>
+          <RevealItem as="div">
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl">
+              Or Send a{' '}
+              <span className="text-primary">Message</span>
+            </h2>
+          </RevealItem>
+        </RevealGroup>
 
         <Reveal delay={0.1} className="mt-12">
           <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
@@ -132,7 +134,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
+                className="cta-primary-interaction mt-4 inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg hover:bg-primary/90"
               >
                 Send Message
               </button>

@@ -38,7 +38,7 @@ export function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="mt-4 font-serif text-4xl font-bold leading-[1.08] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl"
+              className="mt-4 font-serif text-4xl font-bold leading-[1.08] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-7xl"
             >
               DO YOUR LIPS{' '}
               <span className="text-rose-300">disappear</span>{' '}
@@ -50,7 +50,7 @@ export function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="mt-6 space-y-4 text-base leading-relaxed text-stone-200"
+              className="mt-6 space-y-4 text-base leading-relaxed text-stone-200 lg:text-[1.2rem]"
             >
               <p>
                 You put on lipstick just to feel "finished," even when your lip border looks faded and your lips just blend into your face in photos.
@@ -66,7 +66,7 @@ export function Hero() {
             >
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-foreground shadow-lg transition-all hover:bg-stone-100"
+                className="cta-secondary-interaction inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-foreground shadow-lg lg:px-7 lg:py-3.5 lg:text-base"
               >
                 Get a consultation
               </a>
@@ -74,7 +74,7 @@ export function Hero() {
                 href={site.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#20bd5a]"
+                className="cta-primary-interaction inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-[#20bd5a] lg:px-7 lg:py-3.5 lg:text-base"
               >
                 Send us a photo
               </a>

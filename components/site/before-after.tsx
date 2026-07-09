@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import { Reveal } from './reveal'
+import { Reveal, RevealGroup, RevealItem } from './reveal'
 
 export function Gallery() {
   const [sliderValue, setSliderValue] = useState(50)
@@ -10,18 +10,20 @@ export function Gallery() {
   return (
     <section id="gallery" className="scroll-mt-24 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-        <Reveal className="text-center">
+        <RevealGroup className="text-center">
           {/* Bold headline with emphasis */}
-          <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
-            FRESH RESULTS ARE PRETTY.
-            <br />
-            HEALED RESULTS ARE WHAT MATTER.
-          </h2>
+          <RevealItem as="div">
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
+              FRESH RESULTS ARE PRETTY.
+              <br />
+              HEALED RESULTS ARE WHAT MATTER.
+            </h2>
+          </RevealItem>
           {/* Lighter subheadline */}
-          <p className="mt-4 max-w-2xl mx-auto text-lg leading-relaxed text-muted-foreground">
+          <RevealItem as="p" className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Lip blush can look more vivid right after the appointment, but the true result is how the color settles over time.
-          </p>
-        </Reveal>
+          </RevealItem>
+        </RevealGroup>
 
         <Reveal delay={0.1} className="mx-auto mt-12 w-full max-w-full px-4 sm:px-6">
           <div className="box-border mx-auto w-full max-w-[420px] rounded-[12px] bg-card p-2 shadow-sm sm:p-3">
