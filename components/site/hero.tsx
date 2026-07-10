@@ -64,7 +64,17 @@ export function Hero() {
               variants={fadeUp}
               className="mt-4 font-serif text-4xl font-bold leading-[1.08] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-7xl"
             >
-              DO YOUR LIPS disappear UNLESS YOU WEAR LIPSTICK?
+              DO YOUR LIPS{' '}
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(90deg, var(--primary) 0%, color-mix(in srgb, var(--primary) 72%, var(--primary-foreground) 28%) 58%, color-mix(in srgb, var(--primary) 42%, var(--primary-foreground) 58%) 100%)',
+                }}
+              >
+                DISAPPEAR
+              </span>{' '}
+              UNLESS YOU WEAR LIPSTICK?
             </motion.h1>
 
             <motion.div

@@ -2,6 +2,7 @@
 
 import { site } from '@/lib/site'
 import { Reveal, RevealGroup, RevealItem } from './reveal'
+import { WordMaskReveal } from './word-mask-reveal'
 
 export function Solution() {
   return (
@@ -14,13 +15,13 @@ export function Solution() {
       <div className="relative z-10 mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
         <RevealGroup className="text-center">
           {/* Bold pivot headline */}
-          <RevealItem as="div">
-            <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl">
-              THAT&apos;S EXACTLY WHY WE USE A{' '}
-                            <span className="font-bold text-stone-50">SOFT, CUSTOM</span>{' '}
-              LIP BLUSH APPROACH.
-            </h2>
-          </RevealItem>
+          <div>
+            <WordMaskReveal
+              text="THAT'S EXACTLY WHY WE USE A SOFT, CUSTOM LIP BLUSH APPROACH."
+              highlight={['SOFT', 'CUSTOM']}
+              className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl"
+            />
+          </div>
           <RevealItem as="p" className="mt-6 text-center text-lg leading-relaxed text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">
             The goal is not permanent lipstick. It&apos;s soft color, better definition, and a healed result that still looks like you.
           </RevealItem>
