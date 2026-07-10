@@ -105,7 +105,6 @@ export function Footer() {
           <p>
             &copy; 2026 {site.name}. All rights reserved.
           </p>
-          <p>Demo template — replace placeholders with your information.</p>
         </div>
       </div>
     </footer>

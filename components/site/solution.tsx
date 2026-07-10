@@ -1,5 +1,6 @@
 'use client'
 
+import { site } from '@/lib/site'
 import { Reveal, RevealGroup, RevealItem } from './reveal'
 
 export function Solution() {
@@ -25,11 +26,29 @@ export function Solution() {
           </RevealItem>
         </RevealGroup>
 
-        <RevealGroup delay={0.18} className="mt-6 flex flex-col items-center gap-3 text-center">
+        <RevealGroup delay={0.06} className="mt-6 flex flex-col items-center gap-3 text-center">
           <RevealItem as="p" className="text-base font-medium text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">Not a harsh outline.</RevealItem>
           <RevealItem as="p" className="text-base font-medium text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">Not a one-color-fits-all tattoo.</RevealItem>
           <RevealItem as="p" className="mt-4 text-lg font-bold text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">
             Your lips actually visible.
+          </RevealItem>
+          <RevealItem as="div" className="mt-8 hidden lg:block">
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#contact"
+                className="cta-secondary-interaction inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-foreground shadow-lg lg:px-7 lg:py-3.5 lg:text-base"
+              >
+                Get a consultation
+              </a>
+              <a
+                href={site.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-primary-interaction inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-[#20bd5a] lg:px-7 lg:py-3.5 lg:text-base"
+              >
+                Send us a photo
+              </a>
+            </div>
           </RevealItem>
         </RevealGroup>
       </div>

@@ -17,14 +17,17 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-screen w-full items-center overflow-hidden bg-background pt-28 pb-20 lg:pt-36 lg:pb-28"
+      className="relative isolate flex min-h-screen w-full items-center overflow-hidden bg-[#4f403b] pt-28 pb-20 lg:pt-36 lg:pb-28"
     >
       <div className="pointer-events-none absolute inset-0">
         <Image
-          src="/images/close-up-skin-pores-face-care-routine.jpg"
+          src="/images/hero-bg-optimized.webp"
           alt=""
           fill
           priority
+          fetchPriority="high"
+          loading="eager"
+          sizes="100vw"
           className="object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent" />

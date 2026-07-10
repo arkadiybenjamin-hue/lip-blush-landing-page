@@ -1,5 +1,7 @@
 'use client'
 
+import { site } from '@/lib/site'
+import { WhatsAppIcon } from './icons'
 import { RevealGroup, RevealItem } from './reveal'
 
 export function MidCta() {
@@ -21,6 +23,17 @@ export function MidCta() {
           {/* Lighter copy */}
           <RevealItem as="p" className="mt-4 text-lg leading-relaxed text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">
             Send a clear photo and get honest guidance on shade, shape, healing, and whether lip blush is right for you.
+          </RevealItem>
+          <RevealItem as="div" className="mt-8 hidden sm:block">
+            <a
+              href={site.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-primary-interaction inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-[#20bd5a] lg:px-7 lg:py-3.5 lg:text-base"
+            >
+              <WhatsAppIcon className="mr-2 size-5" />
+              Send us a photo
+            </a>
           </RevealItem>
         </RevealGroup>
       </div>

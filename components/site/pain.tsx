@@ -27,9 +27,12 @@ export function Pain() {
             <figure className="overflow-hidden rounded-xl">
               <div className="relative h-[340px] w-full sm:h-[380px] lg:h-[460px]">
                 <Image
-                  src="/images/sexy-woman-biting-her-lip.jpg"
+                  src="/images/pain-section-optimized.webp"
                   alt="Close portrait of a woman biting her lip"
                   fill
+                  priority
+                  fetchPriority="high"
+                  loading="eager"
                   className="object-cover object-center"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
@@ -37,7 +40,7 @@ export function Pain() {
             </figure>
           </Reveal>
 
-          <RevealGroup delay={0.1} className="max-w-[560px] space-y-6 text-base leading-relaxed text-foreground lg:ml-auto">
+          <RevealGroup delay={0.06} className="max-w-[560px] space-y-6 text-base leading-relaxed text-foreground lg:ml-auto">
             <RevealItem as="p">Without makeup, your lips look pale and the natural border feels faded or uneven.</RevealItem>
             <RevealItem as="p">You're tired of putting on lipstick every single day just to feel put together.</RevealItem>
             <RevealItem as="p">What you actually want is more color just not something fake, overdone, or obvious.</RevealItem>

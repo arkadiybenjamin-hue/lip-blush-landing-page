@@ -21,7 +21,7 @@ export function FinalCta() {
             </h2>
           </RevealItem>
           {/* Lighter copy */}
-          <RevealGroup delay={0.09} className="mt-6 space-y-3 text-lg leading-relaxed text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">
+          <RevealGroup delay={0.06} className="mt-6 space-y-3 text-lg leading-relaxed text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">
             <RevealItem as="p">
               Send a photo, tell us what you&apos;re hoping for, and get guidance before booking anything.
             </RevealItem>

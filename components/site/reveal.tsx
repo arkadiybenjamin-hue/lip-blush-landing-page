@@ -4,7 +4,9 @@ import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
 const revealEase: [number, number, number, number] = [0.25, 0.1, 0.25, 1]
-const revealViewport = { once: true, amount: 0.18 }
+const revealViewport = { once: true, amount: 0.08 }
+const revealDuration = 0.55
+const revealStagger = 0.06
 
 interface RevealProps {
   children: ReactNode
@@ -35,7 +37,7 @@ export function Reveal({
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={revealViewport}
-      transition={{ duration: 0.75, delay, ease: revealEase }}
+      transition={{ duration: revealDuration, delay, ease: revealEase }}
     >
       {children}
     </MotionTag>
@@ -46,7 +48,7 @@ export function RevealGroup({
   children,
   className,
   delay = 0,
-  stagger = 0.09,
+  stagger = revealStagger,
   as = 'div',
 }: RevealGroupProps) {
   const MotionTag = motion[as]
@@ -89,7 +91,7 @@ export function RevealItem({
           opacity: 1,
           y: 0,
           transition: {
-            duration: 0.75,
+            duration: revealDuration,
             ease: revealEase,
           },
         },

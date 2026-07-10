@@ -51,7 +51,7 @@ export function Contact() {
           </RevealItem>
         </RevealGroup>
 
-        <Reveal delay={0.1} className="mt-12">
+        <Reveal delay={0.06} className="mt-12">
           <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
             <FieldGroup>
               <Field>

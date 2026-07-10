@@ -18,7 +18,7 @@ export function Healing() {
         </RevealGroup>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
-          <Reveal delay={0.1}>
+          <Reveal delay={0.06}>
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
               <Image
                 src="/images/woman-summer-field-brunette-brown-sweater.jpg"
@@ -29,7 +29,7 @@ export function Healing() {
             </div>
           </Reveal>
 
-          <RevealGroup delay={0.15} className="space-y-4 text-center text-lg leading-relaxed text-pretty text-muted-foreground lg:text-left">
+          <RevealGroup delay={0.06} className="space-y-4 text-center text-lg leading-relaxed text-pretty text-muted-foreground lg:text-left">
             <RevealItem as="p">
                 Your lips may look brighter, darker, or slightly uneven during the first few days. That is a{' '}
                 <span className="font-semibold text-foreground">normal part of healing</span>, not the final result.
