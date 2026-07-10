@@ -177,16 +177,6 @@
   z-index: 5;
 }
 
-/* Animated gradient text shimmer */
-@keyframes gradient-shimmer {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-.gradient-text-shimmer {
-  background-size: 200% 100%;
-  animation: gradient-shimmer 5s linear infinite;
-}
-
 /* Ken Burns slow zoom for images */
 @keyframes ken-burns {
   0% { transform: scale(1) translate(0, 0); }
@@ -214,15 +204,6 @@
   animation: node-glow 3s ease-in-out infinite;
 }
 
-/* Scroll indicator bounce */
-@keyframes scroll-bounce {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(8px); opacity: 1; }
-}
-.scroll-indicator {
-  animation: scroll-bounce 2s ease-in-out infinite;
-}
-
 /* Gallery label fade-in */
 @keyframes label-fade {
   from { opacity: 0; transform: translateY(-4px); }
@@ -247,7 +228,6 @@
   .ken-burns,
   .glow-pulse,
   .node-glow,
-  .scroll-indicator,
   .label-fade,
   .float-in {
     animation: none !important;

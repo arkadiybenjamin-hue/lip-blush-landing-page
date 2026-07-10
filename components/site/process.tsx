@@ -33,7 +33,7 @@ export function Process() {
           {/* Bold headline */}
           <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
             What Happens{' '}
-            <span className="bg-linear-to-r from-[#c98b7a] via-[#d9a595] to-[#f4e6dd] bg-clip-text text-transparent gradient-text-shimmer">Next</span>
+            <span className="text-primary">Next</span>
           </h2>
         </Reveal>
 

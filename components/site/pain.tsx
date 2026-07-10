@@ -13,11 +13,7 @@ export function Pain() {
             <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl lg:text-6xl">
               YOU DON&apos;T WANT MORE MAKEUP.
               <br />
-              YOU JUST WANT YOUR LIPS TO{' '}
-              <span className="bg-linear-to-r from-[#c98b7a] via-[#d9a595] to-[#f4e6dd] bg-clip-text text-transparent gradient-text-shimmer">
-                show up
-              </span>
-              .
+              YOU JUST WANT YOUR LIPS TO SHOW UP.
             </h2>
           </RevealItem>
           {/* Lighter subheadline */}

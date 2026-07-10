@@ -59,11 +59,7 @@ export function Hero() {
               variants={fadeUp}
               className="mt-4 font-serif text-4xl font-bold leading-[1.08] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-7xl"
             >
-              DO YOUR LIPS{' '}
-              <span className="bg-linear-to-r from-[#c98b7a] via-[#d9a595] to-[#f4e6dd] bg-clip-text text-transparent gradient-text-shimmer">
-                disappear
-              </span>{' '}
-              UNLESS YOU WEAR LIPSTICK?
+              DO YOUR LIPS disappear UNLESS YOU WEAR LIPSTICK?
             </motion.h1>
 
             <motion.div
@@ -104,22 +100,6 @@ export function Hero() {
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
-        aria-hidden="true"
-      >
-        <div className="scroll-indicator flex flex-col items-center gap-2 text-stone-200/70">
-          <span className="text-[0.65rem] font-medium uppercase tracking-[0.25em]">Scroll</span>
-          <svg width="14" height="22" viewBox="0 0 14 22" fill="none" className="text-stone-200/60">
-            <rect x="0.5" y="0.5" width="13" height="21" rx="6.5" stroke="currentColor" />
-            <circle cx="7" cy="7" r="2" fill="currentColor" />
-          </svg>
-        </div>
-      </motion.div>
     </section>
   )
 }
