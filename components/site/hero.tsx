@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import { useRef } from 'react'
 import { site } from '@/lib/site'
 
@@ -20,10 +20,15 @@ export function Hero() {
     target: ref,
     offset: ['start start', 'end start'],
   })
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12])
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, -60])
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001,
+  })
+  const bgScale = useTransform(smoothProgress, [0, 1], [1, 1.12])
+  const bgY = useTransform(smoothProgress, [0, 1], ['0%', '15%'])
+  const contentY = useTransform(smoothProgress, [0, 1], [0, -60])
+  const contentOpacity = useTransform(smoothProgress, [0, 0.6], [1, 0])
 
   return (
     <section
@@ -32,7 +37,7 @@ export function Hero() {
       className="relative isolate flex min-h-screen w-full items-center overflow-hidden bg-[#4f403b] pt-28 pb-20 lg:pt-36 lg:pb-28"
     >
       <div className="pointer-events-none absolute inset-0">
-        <motion.div style={{ scale: bgScale, y: bgY }} className="absolute inset-0">
+        <motion.div style={{ scale: bgScale, y: bgY }} className="absolute inset-0 will-change-transform">
           <Image
             src="/images/hero-bg-optimized.webp"
             alt=""
@@ -49,7 +54,7 @@ export function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#faf6f1] to-transparent" />
       </div>
 
-      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
+      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative z-10 mx-auto max-w-7xl px-6 will-change-transform lg:px-10">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col">
             <motion.h1
