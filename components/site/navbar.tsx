@@ -264,7 +264,7 @@ export function Navbar() {
             href={site.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-primary-interaction pointer-events-auto inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-lg hover:bg-[#20bd5a]"
+            className="cta-primary-interaction float-in pointer-events-auto inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-lg hover:bg-[#20bd5a]"
           >
             <WhatsAppIcon className="cta-whatsapp-icon size-4" />
             Send a Photo

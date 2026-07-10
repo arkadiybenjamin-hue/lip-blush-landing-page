@@ -141,6 +141,119 @@
   }
 }
 
+/* ── World-class design elevation ── */
+
+/* Film-grain overlay for tactile, premium feel */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Side edge fade masks — frames content like a magazine spread */
+.edge-fade-left {
+  pointer-events: none;
+  position: absolute;
+  inset-y: 0;
+  left: 0;
+  width: 6vw;
+  max-width: 80px;
+  background: linear-gradient(to right, var(--background), transparent);
+  z-index: 5;
+}
+.edge-fade-right {
+  pointer-events: none;
+  position: absolute;
+  inset-y: 0;
+  right: 0;
+  width: 6vw;
+  max-width: 80px;
+  background: linear-gradient(to left, var(--background), transparent);
+  z-index: 5;
+}
+
+/* Animated gradient text shimmer */
+@keyframes gradient-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.gradient-text-shimmer {
+  background-size: 200% 100%;
+  animation: gradient-shimmer 5s linear infinite;
+}
+
+/* Ken Burns slow zoom for images */
+@keyframes ken-burns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.08) translate(-1.5%, 1%); }
+}
+.ken-burns {
+  animation: ken-burns 18s ease-in-out infinite alternate;
+}
+
+/* Soft glow ring for CTA hover */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 139, 122, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(201, 139, 122, 0); }
+}
+.glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+/* Node glow for timeline */
+@keyframes node-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 139, 122, 0.25); }
+  50% { box-shadow: 0 0 0 6px rgba(201, 139, 122, 0); }
+}
+.node-glow {
+  animation: node-glow 3s ease-in-out infinite;
+}
+
+/* Scroll indicator bounce */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+.scroll-indicator {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* Gallery label fade-in */
+@keyframes label-fade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.label-fade {
+  animation: label-fade 0.6s ease-out both;
+}
+
+/* Entrance animation for floating elements */
+@keyframes float-in {
+  from { opacity: 0; transform: scale(0.8) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.float-in {
+  animation: float-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text-shimmer,
+  .ken-burns,
+  .glow-pulse,
+  .node-glow,
+  .scroll-indicator,
+  .label-fade,
+  .float-in {
+    animation: none !important;
+  }
+}
+
 @layer components {
   .cta-primary-interaction {
     transition:

@@ -49,9 +49,13 @@ export function FocusAreas() {
               <Reveal
                 key={method.title}
                 delay={(i % 4) * 0.1}
-                className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(201,139,122,0.15)]"
               >
-                <h3 className="mt-5 font-serif text-xl font-semibold text-foreground">
+                <div className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-[#c98b7a] via-[#d9a595] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <span className="mb-3 inline-flex size-8 items-center justify-center rounded-full bg-[#c98b7a]/10 font-serif text-sm font-semibold text-[#c98b7a]">
+                  {i + 1}
+                </span>
+                <h3 className="mt-1 font-serif text-xl font-semibold text-foreground">
                   {method.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

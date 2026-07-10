@@ -46,7 +46,7 @@ export function Contact() {
           <RevealItem as="div">
             <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance text-foreground sm:text-5xl">
               Or Send a{' '}
-              <span className="text-primary">Message</span>
+              <span className="bg-linear-to-r from-[#c98b7a] via-[#d9a595] to-[#f4e6dd] bg-clip-text text-transparent gradient-text-shimmer">Message</span>
             </h2>
           </RevealItem>
         </RevealGroup>

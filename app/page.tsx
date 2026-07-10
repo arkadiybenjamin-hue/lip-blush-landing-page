@@ -15,7 +15,8 @@ import { FloatingCta } from '@/components/site/floating-cta'
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative min-h-screen bg-background">
+      <div className="grain-overlay" aria-hidden="true" />
       <Navbar />
       <FloatingCta />
       <main>

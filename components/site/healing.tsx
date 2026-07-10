@@ -24,7 +24,7 @@ export function Healing() {
                 src="/images/woman-summer-field-brunette-brown-sweater.jpg"
                 alt="Woman outdoors in a brown sweater"
                 fill
-                className="object-cover"
+                className="object-cover ken-burns"
               />
             </div>
           </Reveal>

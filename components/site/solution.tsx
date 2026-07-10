@@ -17,7 +17,7 @@ export function Solution() {
           <RevealItem as="div">
             <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance uppercase text-stone-50 drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl">
               THAT&apos;S EXACTLY WHY WE USE A{' '}
-              <span className="font-bold text-stone-50">SOFT, CUSTOM</span>{' '}
+                            <span className="bg-linear-to-r from-[#c98b7a] via-[#d9a595] to-[#f4e6dd] bg-clip-text text-transparent gradient-text-shimmer">SOFT, CUSTOM</span>{' '}
               LIP BLUSH APPROACH.
             </h2>
           </RevealItem>

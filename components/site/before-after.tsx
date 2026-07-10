@@ -106,8 +106,8 @@ export function Gallery() {
                 </div>
               </div>
               <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex justify-between p-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
-                <span>Before</span>
-                <span>After</span>
+                <span className="label-fade drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">Before</span>
+                <span className="label-fade drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" style={{ animationDelay: '0.15s' }}>After</span>
               </div>
             </div>
           </div>
