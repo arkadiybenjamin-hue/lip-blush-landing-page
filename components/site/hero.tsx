@@ -1,9 +1,16 @@
 'use client'
 
 import Image from 'next/image'
+import { Caveat } from 'next/font/google'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import { useRef } from 'react'
 import { site } from '@/lib/site'
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['700'],
+  display: 'swap',
+})
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -74,7 +81,19 @@ export function Hero() {
               >
                 DISAPPEAR
               </span>{' '}
-              UNLESS YOU WEAR LIPSTICK?
+              UNLESS YOU WEAR{' '}
+              <span
+                className={`${caveat.className} inline-block align-baseline text-[1.12em] font-bold normal-case tracking-normal`}
+                style={{
+                  color: '#dc2f3d',
+                  textShadow:
+                    '0.01em 0 0 color-mix(in srgb, var(--primary) 78%, #fffdfa 22%), 0.04em 0.03em 0.08em rgba(143, 61, 53, 0.16), -0.02em 0.01em 0.03em rgba(255, 253, 250, 0.18)',
+                  opacity: 0.96,
+                  transform: 'rotate(-2deg)',
+                }}
+              >
+                LIPSTICK?
+              </span>
             </motion.h1>
 
             <motion.div
